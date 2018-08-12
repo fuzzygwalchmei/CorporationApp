@@ -1,0 +1,49 @@
+#: kivy 1.8.0
+
+<ActionSpinner@Spinner+ActionItem>
+    canvas.before:
+        Color:
+            rgba: 0.128, 0.128, 0.128, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    border: 27, 20, 12, 12
+
+
+<CorporationScreen>:
+    name: 'Main Screen'
+    fullscreen: True
+    #Buttons to add/generate NPC or remove highlighted NPC, switch left and
+    #switch right buttons to move to PC screen, dice roller screen and base data screen
+
+    #main screen section
+    #   - NPC Screen
+    #   - Player Screen (Show player characters and abilities)
+    #   - Dice roller
+    #   - Data Screen (review weapons, skills etc)
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        ActionBar:
+            ActionView:
+                id: av
+                ActionButton:
+                    text: 'Previous Screen'
+                    #on_release: app.go_previous()
+
+                ActionSpinner:
+                    id: Spinner_chooser
+                    important: True
+                    text: 'TBD'
+                    values: ('NPC1','NPC2','NPC3') #to be set dynamically
+                    #on_text: app.ScreenChange() #to be definted
+
+                ActionButton:
+                    text: 'Next Screen'
+                    #on_release:app.go_next()
+
+        ScreenManager:
+            id: sm
+            on_current_screen:
+                #add code here
