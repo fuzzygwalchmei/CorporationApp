@@ -1,4 +1,4 @@
-#: kivy 1.8.0
+#:kivy 1.8.0
 
 <ActionSpinner@Spinner+ActionItem>
     canvas.before:
@@ -12,7 +12,7 @@
 
 <CorporationScreen>:
     name: 'Main Screen'
-    fullscreen: True
+    #fullscreen: True
     #Buttons to add/generate NPC or remove highlighted NPC, switch left and
     #switch right buttons to move to PC screen, dice roller screen and base data screen
 
@@ -26,8 +26,12 @@
         orientation: 'vertical'
 
         ActionBar:
+
             ActionView:
                 id: av
+                ActionPrevious:
+                    title: 'Coporation App'
+
                 ActionButton:
                     text: 'Previous Screen'
                     #on_release: app.go_previous()

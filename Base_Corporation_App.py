@@ -10,6 +10,7 @@ class CorporationScreen(Screen):
 class CorporationApp(App):
     def build(self):
         return CorporationScreen()
+        
 
 if __name__ == '__main__':
     CorporationApp().run()
