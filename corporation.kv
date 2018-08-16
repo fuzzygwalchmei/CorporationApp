@@ -9,6 +9,15 @@
             pos: self.pos
     border: 27, 20, 12, 12
 
+## Hide both but keep ActionGroup(s) and or ActionButton(s) to the right
+<Hide_ActionPrevious@ActionPrevious>:
+    with_previous: False
+    on_press: print(self)
+    title: ''
+    app_icon: ''
+    app_icon_width: 0
+    app_icon_height: 0
+
 
 <CorporationScreen>:
     name: 'Main Screen'
@@ -26,14 +35,16 @@
         orientation: 'vertical'
 
         ActionBar:
-
+            use_seperator: True
             ActionView:
                 id: av
-                ActionPrevious:
-                    title: 'Coporation App'
+                Hide_ActionPrevious:
+                #ActionPrevious:
+                    title: 'Corporation App'
 
                 ActionButton:
                     text: 'Previous Screen'
+                    on_release: app.Add_NPC()
                     #on_release: app.go_previous()
 
                 ActionSpinner:
@@ -46,8 +57,65 @@
                 ActionButton:
                     text: 'Next Screen'
                     #on_release:app.go_next()
-
-        ScreenManager:
-            id: sm
-            on_current_screen:
+#
+#        ScreenManager:
+#            id: sm
+#            on_current_screen:
                 #add code here
+        GridLayout:
+            cols: 4
+            rows: 4
+            spacing: 100
+            row_force_default: True
+            row_default_height: 100
+            col_force_default:True
+            column_default_width: 200
+
+            Label:
+                id: Label1
+                text: "Label 1a"
+            Button:
+                id: Label1b
+                text: "Label 1b"
+            Button:
+                id: Label1c
+                text: "Label 1c"
+            Label:
+                id: Label1d
+                text: "Label 1d"
+            Label:
+                id: Label2a
+                text: "Label 2a"
+            Button:
+                id: Label2b
+                text: "Label 2b"
+            Button:
+                id: Label2c
+                text: "Label 2c"
+            Label:
+                id: Label2d
+                text: "Label 2d"
+            Label:
+                id: Label3a
+                text: "Label 3a"
+            Button:
+                id: Label3b
+                text: "Label 3b"
+            Button:
+                id: Label3c
+                text: "Label 3c"
+            Label:
+                id: Label3d
+                text: "Label 3d"
+            Label:
+                id: Label4a
+                text: "Label 4a"
+            Button:
+                id: Label4b
+                text: "Label 4b"
+            Button:
+                id: Label4c
+                text: "Label 4c"
+            Label:
+                id: Label4d
+                text: "Label 4d"
